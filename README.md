@@ -8,14 +8,14 @@ To collect data, I scaped TechCrunch and Venturebeat, the two leading tech news 
 Altogether, my data contain 260K+ articles and cover 12 years. 
 
 My particular challenge with this project was to extract the names of specific technologies that may not necessarily be the most common words. What eventually worked was the following combination of data-mining:
-1. Strip the original articles from all words but nouns
-2. Apply LDA and NMF, the two topic modeling algorithms, to the noun-only texts with number of topics ranging from 5 to 10. The result is a table with 10-word lines, each of which desribes a topic. Altogether, there are 1,080 lines.
-3. Exctract the most common words from this table of topic description.
-4. Clean the resulting list from words that don't represent technologies such as companies' names and common words.
-5. Count the relative number of times each word occurs.
+  1. Strip the original articles from all words but nouns
+  2. Apply LDA and NMF, the two topic modeling algorithms, to the noun-only texts with number of topics ranging from 5 to 10. The result is a table with 10-word lines, each of which desribes a topic. Altogether, there are 1,080 lines.
+  3. Exctract the most common words from this table of topic description.
+  4. Clean the resulting list from words that don't represent technologies such as companies' names and common words.
+  5. Count the relative number of times each word occurs.
 
 ### Tools I used:
-* Scrapy, Python, Pandas - to collect, clean, and expplore the data
-* TextBlob, Kmeans, LDA, and NMF - to build a list of words that represent the technologies and their relative amount of usage
-* D3 and Dimple to build visualizations
+  * Scrapy, Python, Pandas - to collect, clean, and expplore the data
+  * NLTK, Scikit-Learn, and TextBlob - to build a list of words that represent the technologies and their relative amount of usage
+  * D3 and Dimple - to build visualizations
 
