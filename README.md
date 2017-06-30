@@ -9,7 +9,7 @@ Altogether, my data contain 260K+ articles and cover 12 years.
 
 My particular challenge with this project was to extract the names of specific technologies that may not necessarily be the most common words. What eventually worked was the following approach to information retrieval:
   1. Simplified the original articles to leave only nouns;
-  2. Applied LDA and NMF, two topic modeling algorithms, to the noun-only texts varying the number of topics from 5 to 10. The resulting table contained 10-word lines where each line desribed a topic. Altogether, there were 1,080 lines (45 topics multiplied by 2 methods multiplied by 12 years).
+  2. Applied LDA and NMF, two topic modeling algorithms, to the noun-only texts selecting 10 top words tp\o describe each topic and varying the number of topics from 5 to 10. The resulting table contained 10-word documents where each document desribed a topic. Altogether, there were 1,080 lines (45 topics multiplied by 2 methods multiplied by 12 years).
   3. Exctracted the most common words from the above table of topic description.
   4. Manually cleaned the resulting list from words that don't represent technologies such as companies' names and common words.
   5. Counted the relative number of times each word occured to use it in visualizations.
