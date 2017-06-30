@@ -7,15 +7,21 @@ To collect data, I scaped TechCrunch and Venturebeat, the two leading tech news 
 
 Altogether, my data contain 260K+ articles and cover 12 years. 
 
-My particular challenge with this project was to extract the names of specific technologies that may not necessarily be the most common words. What eventually worked was the following combination of data-mining:
-  1. Strip the original articles from all words but nouns
-  2. Apply LDA and NMF, the two topic modeling algorithms, to the noun-only texts with number of topics ranging from 5 to 10. The result is a table with 10-word lines, each of which desribes a topic. Altogether, there are 1,080 lines.
-  3. Exctract the most common words from this table of topic description.
-  4. Clean the resulting list from words that don't represent technologies such as companies' names and common words.
-  5. Count the relative number of times each word occurs.
+My particular challenge with this project was to extract the names of specific technologies that may not necessarily be the most common words. What eventually worked was the following approach to information retrieval:
+  1. Simplified the original articles to leave only nouns;
+  2. Applied LDA and NMF, two topic modeling algorithms, to the noun-only texts varying the number of topics from 5 to 10. The resulting table contained 10-word lines where each line desribed a topic. Altogether, there were 1,080 lines (45 topics multiplied by 2 methods multiplied by 12 years).
+  3. Exctracted the most common words from the above table of topic description.
+  4. Manually cleaned the resulting list from words that don't represent technologies such as companies' names and common words.
+  5. Counted the relative number of times each word occured to use it in visualizations.
 
 ### Tools I used:
   * Scrapy, Python, Pandas - to collect, clean, and expplore the data
   * NLTK, Scikit-Learn, and TextBlob - to build a list of words that represent the technologies and their relative amount of usage
   * D3 and Dimple - to build visualizations
 
+### Presentation and Slides
+Here are my final slides and presentation (sorry for the bottle of beer in the middle of the screen. It was not planned :))
+
+### Visualizations
+Here is a lanscape of technologies that have been mentioned in the tech news.
+Here is how our recent tech history looks like. 
