@@ -7,3 +7,9 @@ To collect data, I scaped TechCrunch and Venturebeat, the two leading tech news 
 
 Altogether, my data contain 260K+ articles and cover 12 years. 
 
+My particular challenge with this project was to extract the names of specific technologies that may not necessarily be the most common words. What eventually worked was the following combination of data-mining:
+1. Use only nouns in the original articles
+2. Apply LDA and NMF, the two topic modeling algorithms, to the noun-only texts with number of topics ranging from 5 to 10. The result is a table with 10-word lines, exh of which desribes a topic.
+3. Exctract the most common words from the table of topic description. 
+4. Clean the resulting table from words that don't represent technologies such as companies' names and common words.
+5. Count the percentage 
