@@ -1,0 +1,245 @@
+<!-- https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart -->
+<!-- Elenas-MBP:PMSI-AlignAlytics-dimple-65f6985 Elena$ python -m http.server 8000 -->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<div id="chartContainer">
+  <!-- {scriptDependencies} -->
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 900, 700);
+
+    // The default data set for these examples has regular times
+    // and the point of this demo is to show the time axis
+    // functionality, therefore a small bespoke data set is used.
+    data = [
+      { "Tech":"google","Date":"2005","Value":0.0 },
+      { "Tech":"google","Date":"2006","Value":0.01462225832656377 },
+      { "Tech":"youtube","Date":"2006","Value":0.010560519902518278 },
+      { "Tech":"sony","Date":"2006","Value":0.00974817221770918 },
+      { "Tech":"apple","Date":"2006","Value":0.00974817221770918 },
+      { "Tech":"zune","Date":"2006","Value":0.008935824532900082 },
+      { "Tech":"yahoo","Date":"2006","Value":0.008935824532900082 },
+      { "Tech":"microsoft","Date":"2006","Value":0.008123476848090982 },
+      { "Tech":"nintendo","Date":"2006","Value":0.006498781478472786 },
+      { "Tech":"skype","Date":"2006","Value":0.006498781478472786 },
+      { "Tech":"venturebeat","Date":"2006","Value":0.00487408610885459 },
+      { "Tech":"samsung","Date":"2006","Value":0.004061738424045491 },
+      { "Tech":"nokia","Date":"2006","Value":0.004061738424045491 },
+      { "Tech":"myspace","Date":"2006","Value":0.002437043054427295 },
+      { "Tech":"apple","Date":"2007","Value":0.010560519902518278 },
+      { "Tech":"google","Date":"2007","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2007","Value":0.00974817221770918 },
+      { "Tech":"youtube","Date":"2007","Value":0.00974817221770918 },
+      { "Tech":"microsoft","Date":"2007","Value":0.008935824532900082 },
+      { "Tech":"verizon","Date":"2007","Value":0.008123476848090982 },
+      { "Tech":"sony","Date":"2007","Value":0.007311129163281885 },
+      { "Tech":"nokia","Date":"2007","Value":0.00487408610885459 },
+      { "Tech":"yahoo","Date":"2007","Value":0.00487408610885459 },
+      { "Tech":"sprint","Date":"2007","Value":0.00487408610885459 },
+      { "Tech":"myspace","Date":"2007","Value":0.003249390739236393 },
+      { "Tech":"nintendo","Date":"2007","Value":0.002437043054427295 },
+      { "Tech":"vista","Date":"2007","Value":0.0016246953696181965 },
+      { "Tech":"venturebeat","Date":"2007","Value":0.0016246953696181965 },
+      { "Tech":"intel","Date":"2007","Value":0.0016246953696181965 },
+      { "Tech":"apple","Date":"2008","Value":0.011372867587327376 },
+      { "Tech":"facebook","Date":"2008","Value":0.011372867587327376 },
+      { "Tech":"google","Date":"2008","Value":0.010560519902518278 },
+      { "Tech":"twitter","Date":"2008","Value":0.00974817221770918 },
+      { "Tech":"microsoft","Date":"2008","Value":0.008935824532900082 },
+      { "Tech":"yahoo","Date":"2008","Value":0.008123476848090982 },
+      { "Tech":"nintendo","Date":"2008","Value":0.005686433793663688 },
+      { "Tech":"myspace","Date":"2008","Value":0.00487408610885459 },
+      { "Tech":"sony","Date":"2008","Value":0.00487408610885459 },
+      { "Tech":"nokia","Date":"2008","Value":0.003249390739236393 },
+      { "Tech":"youtube","Date":"2008","Value":0.003249390739236393 },
+      { "Tech":"intel","Date":"2008","Value":0.0016246953696181965 },
+      { "Tech":"friendfeed","Date":"2008","Value":0.0008123476848090983 },
+      { "Tech":"facebook","Date":"2009","Value":0.012185215272136474 },
+      { "Tech":"twitter","Date":"2009","Value":0.00974817221770918 },
+      { "Tech":"apple","Date":"2009","Value":0.00974817221770918 },
+      { "Tech":"google","Date":"2009","Value":0.00974817221770918 },
+      { "Tech":"microsoft","Date":"2009","Value":0.006498781478472786 },
+      { "Tech":"myspace","Date":"2009","Value":0.005686433793663688 },
+      { "Tech":"yahoo","Date":"2009","Value":0.00487408610885459 },
+      { "Tech":"intel","Date":"2009","Value":0.003249390739236393 },
+      { "Tech":"youtube","Date":"2009","Value":0.003249390739236393 },
+      { "Tech":"palm","Date":"2009","Value":0.002437043054427295 },
+      { "Tech":"nokia","Date":"2009","Value":0.0016246953696181965 },
+      { "Tech":"amazon","Date":"2009","Value":0.0008123476848090983 },
+      { "Tech":"sony","Date":"2009","Value":0.0008123476848090983 },
+      { "Tech":"google","Date":"2010","Value":0.01380991064175467 },
+      { "Tech":"twitter","Date":"2010","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2010","Value":0.00974817221770918 },
+      { "Tech":"apple","Date":"2010","Value":0.00974817221770918 },
+      { "Tech":"microsoft","Date":"2010","Value":0.008123476848090982 },
+      { "Tech":"foursquare","Date":"2010","Value":0.005686433793663688 },
+      { "Tech":"hp","Date":"2010","Value":0.003249390739236393 },
+      { "Tech":"youtube","Date":"2010","Value":0.003249390739236393 },
+      { "Tech":"verizon","Date":"2010","Value":0.002437043054427295 },
+      { "Tech":"yahoo","Date":"2010","Value":0.002437043054427295 },
+      { "Tech":"htc","Date":"2010","Value":0.002437043054427295 },
+      { "Tech":"amazon","Date":"2010","Value":0.0008123476848090983 },
+      { "Tech":"zynga","Date":"2010","Value":0.0008123476848090983 },
+      { "Tech":"intel","Date":"2010","Value":0.0008123476848090983 },
+      { "Tech":"nexus","Date":"2010","Value":0.0008123476848090983 },
+      { "Tech":"facebook","Date":"2011","Value":0.012997562956945572 },
+      { "Tech":"apple","Date":"2011","Value":0.011372867587327376 },
+      { "Tech":"zynga","Date":"2011","Value":0.00974817221770918 },
+      { "Tech":"microsoft","Date":"2011","Value":0.00974817221770918 },
+      { "Tech":"twitter","Date":"2011","Value":0.00974817221770918 },
+      { "Tech":"google","Date":"2011","Value":0.00974817221770918 },
+      { "Tech":"samsung","Date":"2011","Value":0.007311129163281885 },
+      { "Tech":"verizon","Date":"2011","Value":0.006498781478472786 },
+      { "Tech":"nintendo","Date":"2011","Value":0.005686433793663688 },
+      { "Tech":"sony","Date":"2011","Value":0.00487408610885459 },
+      { "Tech":"amazon","Date":"2011","Value":0.004061738424045491 },
+      { "Tech":"hp","Date":"2011","Value":0.004061738424045491 },
+      { "Tech":"intel","Date":"2011","Value":0.0016246953696181965 },
+      { "Tech":"youtube","Date":"2011","Value":0.0016246953696181965 },
+      { "Tech":"netflix","Date":"2011","Value":0.0016246953696181965 },
+      { "Tech":"sprint","Date":"2011","Value":0.0008123476848090983 },
+      { "Tech":"groupon","Date":"2011","Value":0.0008123476848090983 },
+      { "Tech":"twitter","Date":"2012","Value":0.012997562956945572 },
+      { "Tech":"apple","Date":"2012","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2012","Value":0.00974817221770918 },
+      { "Tech":"google","Date":"2012","Value":0.00974817221770918 },
+      { "Tech":"zynga","Date":"2012","Value":0.007311129163281885 },
+      { "Tech":"samsung","Date":"2012","Value":0.006498781478472786 },
+      { "Tech":"microsoft","Date":"2012","Value":0.006498781478472786 },
+      { "Tech":"nexus","Date":"2012","Value":0.005686433793663688 },
+      { "Tech":"instagram","Date":"2012","Value":0.005686433793663688 },
+      { "Tech":"youtube","Date":"2012","Value":0.00487408610885459 },
+      { "Tech":"amazon","Date":"2012","Value":0.003249390739236393 },
+      { "Tech":"nokia","Date":"2012","Value":0.002437043054427295 },
+      { "Tech":"netflix","Date":"2012","Value":0.0016246953696181965 },
+      { "Tech":"yahoo","Date":"2012","Value":0.0008123476848090983 },
+      { "Tech":"venturebeat","Date":"2012","Value":0.0008123476848090983 },
+      { "Tech":"apple","Date":"2013","Value":0.011372867587327376 },
+      { "Tech":"google","Date":"2013","Value":0.010560519902518278 },
+      { "Tech":"microsoft","Date":"2013","Value":0.00974817221770918 },
+      { "Tech":"twitter","Date":"2013","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2013","Value":0.00974817221770918 },
+      { "Tech":"samsung","Date":"2013","Value":0.006498781478472786 },
+      { "Tech":"youtube","Date":"2013","Value":0.004061738424045491 },
+      { "Tech":"amazon","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"sony","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"nsa","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"instagram","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"nokia","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"nintendo","Date":"2013","Value":0.002437043054427295 },
+      { "Tech":"google","Date":"2014","Value":0.012185215272136474 },
+      { "Tech":"apple","Date":"2014","Value":0.011372867587327376 },
+      { "Tech":"microsoft","Date":"2014","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2014","Value":0.00974817221770918 },
+      { "Tech":"twitter","Date":"2014","Value":0.008935824532900082 },
+      { "Tech":"amazon","Date":"2014","Value":0.008123476848090982 },
+      { "Tech":"samsung","Date":"2014","Value":0.005686433793663688 },
+      { "Tech":"nintendo","Date":"2014","Value":0.00487408610885459 },
+      { "Tech":"sony","Date":"2014","Value":0.0016246953696181965 },
+      { "Tech":"nokia","Date":"2014","Value":0.0016246953696181965 },
+      { "Tech":"netflix","Date":"2014","Value":0.0008123476848090983 },
+      { "Tech":"google","Date":"2015","Value":0.010560519902518278 },
+      { "Tech":"microsoft","Date":"2015","Value":0.00974817221770918 },
+      { "Tech":"facebook","Date":"2015","Value":0.00974817221770918 },
+      { "Tech":"apple","Date":"2015","Value":0.00974817221770918 },
+      { "Tech":"twitter","Date":"2015","Value":0.008935824532900082 },
+      { "Tech":"nintendo","Date":"2015","Value":0.00487408610885459 },
+      { "Tech":"samsung","Date":"2015","Value":0.00487408610885459 },
+      { "Tech":"amazon","Date":"2015","Value":0.002437043054427295 },
+      { "Tech":"spotify","Date":"2015","Value":0.0008123476848090983 },
+      { "Tech":"netflix","Date":"2015","Value":0.0008123476848090983 },
+      { "Tech":"uber","Date":"2015","Value":0.0008123476848090983 },
+      { "Tech":"facebook","Date":"2016","Value":0.012185215272136474 },
+      { "Tech":"google","Date":"2016","Value":0.010560519902518278 },
+      { "Tech":"samsung","Date":"2016","Value":0.00974817221770918 },
+      { "Tech":"apple","Date":"2016","Value":0.00974817221770918 },
+      { "Tech":"twitter","Date":"2016","Value":0.008123476848090982 },
+      { "Tech":"microsoft","Date":"2016","Value":0.008123476848090982 },
+      { "Tech":"uber","Date":"2016","Value":0.008123476848090982 },
+      { "Tech":"oculus","Date":"2016","Value":0.005686433793663688 },
+      { "Tech":"nintendo","Date":"2016","Value":0.005686433793663688 },
+      { "Tech":"amazon","Date":"2016","Value":0.005686433793663688 },
+      { "Tech":"htc","Date":"2016","Value":0.00487408610885459 },
+      { "Tech":"tesla","Date":"2016","Value":0.00487408610885459 },
+      { "Tech":"slack","Date":"2016","Value":0.002437043054427295 },
+      { "Tech":"google","Date":"2017","Value":0.011372867587327376 },
+      { "Tech":"facebook","Date":"2017","Value":0.010560519902518278 },
+      { "Tech":"apple","Date":"2017","Value":0.008935824532900082 },
+      { "Tech":"uber","Date":"2017","Value":0.008123476848090982 },
+      { "Tech":"twitter","Date":"2017","Value":0.006498781478472786 },
+      { "Tech":"intel","Date":"2017","Value":0.005686433793663688 },
+      { "Tech":"oculus","Date":"2017","Value":0.00487408610885459 },
+      { "Tech":"microsoft","Date":"2017","Value":0.00487408610885459 },
+      { "Tech":"nintendo","Date":"2017","Value":0.00487408610885459 },
+      { "Tech":"samsung","Date":"2017","Value":0.00487408610885459 },
+      { "Tech":"amazon","Date":"2017","Value":0.00487408610885459 },
+      { "Tech":"snapchat","Date":"2017","Value":0.003249390739236393 },
+      { "Tech":"techcrunch","Date":"2017","Value":0.002437043054427295 },
+      { "Tech":"tesla","Date":"2017","Value":0.0008123476848090983 },
+    ];
+
+    // Create Separate Date and Time, this allows us to draw them
+    // on separate axes.  Despite the time axis only displaying
+    // the time portion, the whole date is used so they need to
+    // have the same date allocated
+    data.forEach(function (d) {
+        d["Year"] = d["Date"].substring(0, d["Date"].length);
+        d["Company"] = d["Tech"].substring(0, 3); //d["Tech"].length);
+    }, this);
+
+    // Create the chart as usual
+    var myChart = new dimple.chart(svg, data);
+    myChart.setBounds(70, 40, 700, 500)
+
+    // Add the x axis reading dates in the format 01 Jan 2012
+    // and displaying them 01 Jan
+    var x = myChart.addTimeAxis("x", "Year", "%Y", "%Y");
+
+    // Add the y axis reading dates and times but only outputting
+    // times.
+    // var y = myChart.addTimeAxis("y", "Cluster",
+    //     "%Y-%m-%d %H:%M", "%H:%M");
+    var y = myChart.addCategoryAxis("y", "Company") //.hidden = true
+
+    // Size the bubbles by volume
+    var z = myChart.addMeasureAxis("z", "Value");
+
+    // Setting min and max dates requires them to be set
+    // as actual javascript date objects
+    // x.overrideMin = new Date("2010-06-20");
+    // x.overrideMax = new Date("2011-01-02");
+    // y.overrideMin = new Date("01/01/2000 9:00 am");
+    // y.overrideMax = new Date("01/01/2000 6:00 pm");
+
+    // Show a label for every 4 weeks.
+    x.timePeriod = d3.timeYear;
+    // x.timeInterval = 4;
+
+    // Control bubble sizes by setting the max and min values
+    z.overrideMin = 0;
+    z.overrideMax = 0.05;
+
+    // Add the bubble series for shift values first so that it is
+    // drawn behind the lines
+    myChart.addSeries("Tech", dimple.plot.bubble);
+
+    // Add the line series on top of the bubbles.  The bubbles
+    // and line points will naturally fall in the same places
+    var s = myChart.addSeries("Tech", dimple.plot.line);
+
+    // Add line markers to the line because it looks nice
+    s.lineMarkers = true;
+
+    // Show a legend
+    // myChart.addLegend(180, 10, 360, 20, "right");
+    myChart.addLegend(885, 25, 30, 610, "right");
+
+    // Draw everything
+    myChart.draw();
+
+  </script>
+</div>
+</html>
