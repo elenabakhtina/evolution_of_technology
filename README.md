@@ -19,7 +19,7 @@ My particular challenge with this project dealt with retrieval of specific infor
   * D3 and Dimple - to build visualizations
 
 ### Presentation and Slides
-Here are my final slides and presentation (sorry for the bottle of beer in the middle of the screen. It was not planned :))
+Here are my final [slides](https://github.com/elenabakhtina/evolution_of_technology/blob/master/presentation/ElenaBakhtina_TechEvolution_Final.pdf) and presentation (sorry for the bottle of beer in the middle of the screen. It was not planned :))
 
 ### Visualizations
 Here is a [lanscape of technologies](http://0.0.0.0:8000/BubbleChart_D3.html) that have been mentioned in the tech news.
