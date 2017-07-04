@@ -8,7 +8,7 @@ To collect data, I scraped TechCrunch and Venturebeat, the two leading tech news
 
 Altogether, my data contain 260K+ articles and cover 12 years. 
 
-My particular challenge with this project was to retrieve specific information, i.e. names of technologies, which may not necessarily be the most common words. Eventually the following approach has worked:  
+My particular challenge with this project was to retrieve specific information, i.e. names of technologies, which may not necessarily be the most common words. What eventually worked was the following approach:  
   1. Applied LDA and NMF, two topic modeling algorithms, to the prepocessed texts selecting 10 top words to describe each topic and varying the number of topics from 5 to 10. The resulting table contains a list of 10-word documents, each of which desribes a topic. Altogether, the table contains 1,080 topics (45 topics created by each method multiplied by 2 methods multiplied by 12 years).
   2. Exctracted the most frequent words.
   3. Manually cleaned the resulting list of most frequent words to remove the ones that don't represent technologies such as companies' names and common words.
