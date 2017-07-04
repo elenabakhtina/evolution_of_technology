@@ -23,5 +23,5 @@ My particular challenge with this project was to retrieve specific information, 
 Here are my final [slides](https://github.com/elenabakhtina/evolution_of_technology/blob/master/presentation/ElenaBakhtina_TechEvolution_Final.pdf) and [the presentation (4:19)](https://youtu.be/nt4-IWo9noc) at the Metis Career Day.
 
 ### Visualizations
-Here is a [lanscape of technologies](http://0.0.0.0:8000/BubbleChart_D3.html) that have been mentioned in the tech news. Different colors correspond to different years.
-And here is how our recent [tech history](http://0.0.0.0:8000/TechInnovations2_.html) looks as shown by my analysis. 
+Here is a [lanscape of technologies](http://0.0.0.0:8000/BubbleChart_D3.html) that have been mentioned in the tech news in the last 12 years. Different colors correspond to different years.
+And here is a map of how our recent [tech history](http://0.0.0.0:8000/TechInnovations2_.html) looks like as shown by my analysis. 
