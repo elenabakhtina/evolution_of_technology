@@ -1,4 +1,4 @@
-# Exploring the evolution of technologies over the last decade in an attempt to visualize our recent tech history
+# Exploring the evolution of technologies over the last decade to build a map of our recent tech history.
 
 We live in a very interesting time. Due to advances in technology, our world is constantly changing. For my final project at Metis, I decided to visualize our recent tech history to spot existing trends and to, hopefully, identify emerging ones. 
 
@@ -14,7 +14,7 @@ My particular challenge with this project was to retrieve specific information, 
   3. Manually cleaned the resulting list of most frequent words to remove the ones that don't represent technologies such as companies' names and common words.
   4. Counted the relative number of times each word occured in topic descriptions and used the final numbers to build visualizations.
 
-### Tools I used:
+### Tools:
   * Scrapy, Python, Pandas - to collect, clean, and expplore the data
   * NLTK, Scikit-Learn, and TextBlob - to build a list of words that represent the technologies and calculate their relative usage
   * D3 and Dimple - to build visualizations
@@ -25,3 +25,6 @@ Here are my final [slides](https://github.com/elenabakhtina/evolution_of_technol
 ### Visualizations
 Here is a [lanscape of technologies](http://0.0.0.0:8000/BubbleChart_D3.html) that have been mentioned in the tech news in the last 12 years. Different colors correspond to different years.
 And here is a map of how our recent [tech history](http://0.0.0.0:8000/TechInnovations2_.html) looks like as shown by my analysis. 
+
+### Bonus
+Another approach to textmining, in addition to topic modelng, is clustering. I wanted to compare results of applying these two approaches 
