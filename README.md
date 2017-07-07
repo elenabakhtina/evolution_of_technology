@@ -25,8 +25,8 @@ Here are my final [slides](https://github.com/elenabakhtina/evolution_of_technol
 ### Visualizations
 Here is a [lanscape of technologies](http://0.0.0.0:8000/BubbleChart_D3.html) that have been mentioned in the tech news in the last 12 years. Different colors show different years. 
 Here is a [static visualization](https://github.com/elenabakhtina/evolution_of_technology/blob/master/visualization/TechnologyEvolution.png) that shows how various technologies have been developing over time with identified large trends: Games, Applications, Mobile, Data, Social, and Virtual Reality as an emerging trend.
-And here is an [interactive map of our recent tech history](https://bl.ocks.org/elenabakhtina/raw/f6b16fe968b675caccf9b19280103e49) as constructed by my analysis.  
-For those who are curious, here is a [map of companies](http://0.0.0.0:8000/TechInnovations3.html) that appeared newsworthy as considered by tech news sites.  
+And here is an [interactive map of our recent tech history](https://bl.ocks.org/elenabakhtina/raw/f6b16fe968b675caccf9b19280103e49/) as constructed by my analysis.  
+For those who are curious, here is a [map of companies](http://bl.ocks.org/elenabakhtina/raw/ba311bce4785bac48cc97f9e20aed747/) that appeared newsworthy as considered by tech news sites.  
 [test](http://bl.ocks.org/elenabakhtina/ba311bce4785bac48cc97f9e20aed747/)
 
 ### Additional Research
