@@ -1,5 +1,4 @@
 <!-- https://bl.ocks.org/mbostock/4063269 -->
-<!-- Elenas-MBP:PMSI-AlignAlytics-dimple-65f6985 Elena$ python -m http.server 8000 -->
 
 <!DOCTYPE html>
 <svg width="960" height="960" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
@@ -18,7 +17,6 @@ var pack = d3.pack()
     .size([width, height])
     .padding(1.5);
 
-// d3.csv("TechInnovationsD3_bub1_opt2.csv", function(d) {
 d3.csv("TechInnovationsD3_bub1_opt2.csv", function(d) {
   d.value = +d.value;
   if (d.value) return d;
