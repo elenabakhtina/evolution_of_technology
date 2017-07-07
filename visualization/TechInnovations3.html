@@ -1,5 +1,4 @@
 <!-- https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart -->
-<!-- Elenas-MBP:PMSI-AlignAlytics-dimple-65f6985 Elena$ python -m http.server 8000 -->
 
 <!DOCTYPE html>
 <meta charset="utf-8">
@@ -11,9 +10,6 @@
   <script type="text/javascript">
     var svg = dimple.newSvg("#chartContainer", 900, 700);
 
-    // The default data set for these examples has regular times
-    // and the point of this demo is to show the time axis
-    // functionality, therefore a small bespoke data set is used.
     data = [
       { "Tech":"google","Date":"2005","Value":0.0 },
       { "Tech":"google","Date":"2006","Value":0.01462225832656377 },
@@ -234,7 +230,6 @@
     s.lineMarkers = true;
 
     // Show a legend
-    // myChart.addLegend(180, 10, 360, 20, "right");
     myChart.addLegend(885, 25, 30, 610, "right");
 
     // Draw everything
