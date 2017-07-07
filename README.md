@@ -1,6 +1,6 @@
-# Exploring the evolution of technologies over the last decade in an attempt to visualize our recent tech history.
+# Exploring 12 years of tech news in an attempt to visualize our recent tech history.
 
-We live in a very interesting time. Due to advances in technology, our world is constantly changing. For my final project at Metis, I decided to visualize our recent tech history to spot existing trends and to, hopefully, identify emerging ones. 
+We live in a very interesting time. Due to advances in technology, our world is constantly changing. For my final project at Metis, I wanted to visualize our recent tech history to spot existing trends and to, hopefully, identify emerging ones. 
 
 I also was curious to see whether it would be possible to find any patterns in how varous technologies develop or understand why some technologies develop very fast while others seem to take their time.
 
