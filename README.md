@@ -1,4 +1,4 @@
-# Exploring the evolution of technologies over the last decade to build a map of our recent tech history.
+# Exploring the evolution of technologies over the last decade in an attempt to visualize our recent tech history.
 
 We live in a very interesting time. Due to advances in technology, our world is constantly changing. For my final project at Metis, I decided to visualize our recent tech history to spot existing trends and to, hopefully, identify emerging ones. 
 
